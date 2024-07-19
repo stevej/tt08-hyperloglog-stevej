@@ -9,12 +9,17 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+HyperLogLog is a solution to the `count-distinct` problem, a space efficient implementation that tracks an approximation of how many distinct elements of a multiset.
+
+This particular implementation tracks 128-bit values with the motivation of an ethernet switch tracking disinct count of IPv6 addresses it has seen.
 
 ## How to test
 
-Explain how to use your project
+Write 128-bit values into addr 0 using SPI writes.
+Read a 128-bit value from addr 0 using SPI read.
+The read will give you an estimate for the total number of unique 128-bit values that have been written.
+
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware is required but this is an SPI slave and can be used as such and has been tested with an icebreaker FPGA and a Raspberry PI 2040.
