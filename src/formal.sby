@@ -1,0 +1,17 @@
+[tasks]
+cover
+
+[options]
+cover: mode cover
+depth 10
+
+[engines]
+smtbmc
+
+[script]
+read -sv lzc_formal.v
+prep -top lzc_formal
+
+[files]
+lzc_formal.v
+lzc.v
